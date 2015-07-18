@@ -8,3 +8,4 @@ encrypted message must be in a text file located in the same folder as the py fi
 ie "EncodedMessage.txt". The program will then create DecodedMessage.txt which will contain the decoded message.
 
 As of now functionality is limited and only 3 encryption methods are available.
+Also this uses python 2.7
