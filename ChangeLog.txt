@@ -1,0 +1,6 @@
+7/17/15
+version .1 Initial release. basic functionality.
+
+
+7/18/15
+version .2  Added help menu. Made the menus a little better looking. few fixes.
