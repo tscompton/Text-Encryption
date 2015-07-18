@@ -14,31 +14,76 @@
 
 def main():
     while True:
-        choice = raw_input("\t1:Encode:\n\t2:Decode:\n\t3:Exit:\n\t")
+        choice = raw_input("""
+
+      Text Encryptor & Decryptor
+
+        ----------------------
+        |1) Encryption:      |
+        |2) Decryption:      |
+        |                    |
+        |____________________|
+        |h) Help             |
+        |e) Exit             |
+        |____________________|
+        :""")
         if choice == "1":
-            encryptionChoice = raw_input("Choose encryption type: \n1)Base64:\n2)cp037:\n3)Ceasar-Cypher:\n")
+            encryptionChoice = raw_input("""
+
+
+
+        ----------------------
+        |1) Base64:          |
+        |2) cp037:           |
+        |3) Ceasar-Cypther:  |
+        |____________________|
+        |h) Help             |
+        |e) Exit             |
+        |____________________|
+        :""")
             if encryptionChoice == "1":
                 encode("base64")
             elif encryptionChoice == "2":
                 encode("cp037")
             elif encryptionChoice == "3":
                 encode("rot_13")
+            elif encryptionChoice == "h":
+                helpMenu()
+            elif encryptionChoice == "e":
+                break
             else:
                 print "Please try again"
 
         elif choice == "2":
-            encryptionChoice = raw_input("Choose decryption type: \n1)Base64:\n2)cp037\n3)Ceasar-Cypher:\n")
+            encryptionChoice = raw_input("""
+
+        ----------------------
+        |1) Base64:          |
+        |2) cp037:           |
+        |3) Ceasar-Cypther:  |
+        |____________________|
+        |h) Help             |
+        |e) Exit             |
+        |____________________|
+        :""")
+
             if encryptionChoice == "1":
                 decode("base64")
             elif encryptionChoice == "2":
                 decode("cp037")
             elif encryptionChoice == "3":
                 decode("rot_13")
+            elif encryptionChoice == "h":
+                helpMenu()
+            elif encryptionChoice == "e":
+                break
             else:
                 print "Please try again"
 
-        elif choice == "3":
+        elif choice == "e":
             break
+        elif choice == "h":
+            helpMenu()
 
         else:
             print "Unrecognized choice! Please type 1, 2, or 3."
@@ -74,6 +119,24 @@ def decode(encryption):
         else:
             print "The file name must be a .txt file and the extension must be typed!!"
             print "Example: 'EncodedMessage.txt' "
+
+
+def helpMenu():
+    print """\t     Choose either Encryption or Decryption by typing the
+             corresponding number" and pressing enter.
+             If doing encryption you will prompted to type a message to encrypt.
+             Next choose the encryption type. You will be displayed your
+             encrypted message and a text file will be made in the folder where
+             this program lives. The text file will be named EncodedMessage.txt
+
+             If doing decryption you will be prompted to choose encryption type.
+             Next you will be prompted to enter the text file name.
+             Be sure to type the whole file name and it must end in txt but can
+             be named whatever.
+             Example 'EncodedMessage.txt"
+             You will be displayed the decoded message and a text file will be
+             made with the decrypted message entitled DecodedMessage.txt
+        """
 
 
 main()
