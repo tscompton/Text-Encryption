@@ -9,7 +9,7 @@
 # Copyright:   (c) travis compton 2015
 # Licence:     The MIT License (MIT)
 #-------------------------------------------------------------------------------
-
+import hashlib
 
 
 def main():
@@ -36,6 +36,7 @@ def main():
         |1) Base64:          |
         |2) cp037:           |
         |3) Ceasar-Cypther:  |
+        |4) MD5              |
         |____________________|
         |h) Help             |
         |e) Exit             |
@@ -47,6 +48,8 @@ def main():
                 encode("cp037")
             elif encryptionChoice == "3":
                 encode("rot_13")
+            elif encryptionChoice == "4":
+                encodeMD5()
             elif encryptionChoice == "h":
                 helpMenu()
             elif encryptionChoice == "e":
@@ -137,6 +140,16 @@ def helpMenu():
              You will be displayed the decoded message and a text file will be
              made with the decrypted message entitled DecodedMessage.txt
         """
+
+def encodeMD5():
+    message = raw_input("Type a message to encode in MD5 :\n")
+    a = hashlib.md5()
+    a.update(message.encode('utf-8'))
+    encodedMessageText = open("EncodedMessage.txt", "w")
+    encodedMessageText.write(a.hexdigest())
+    encodedMessageText.close()
+    print a.hexdigest()
+
 
 
 main()

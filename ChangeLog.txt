@@ -1,6 +1,8 @@
 7/17/15
 version .1 Initial release. basic functionality.
 
-
 7/18/15
-version .2  Added help menu. Made the menus a little better looking. few fixes.
+version .2 Added help menu. Made the menus a little better looking. few fixes.
+
+7/20/15
+version .3 Added MD5 encryption
