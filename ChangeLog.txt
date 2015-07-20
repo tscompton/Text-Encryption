@@ -6,3 +6,8 @@ version .2 Added help menu. Made the menus a little better looking. few fixes.
 
 7/20/15
 version .3 Added MD5 encryption
+
+7/20/15
+version .3.5 Added MD5 File hashing for checksums. prints to screen and outputs a file named MD5FileChecksum.txt
+added help menu specifically for MD5.
+fixed some formatting.
